@@ -1,3 +1,4 @@
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -5,7 +6,18 @@ import org.junit.Test;
 
 public class ArraysAndStringsTest {
 
-    /** 
+    /**
+     * 1.3
+     */
+    @Test
+    public void testURLify() {
+        char[] input = "Mr John Smith    ".toCharArray();
+        int trueLength = 13;
+        char[] output = "Mr%20John%20Smith".toCharArray();
+        assertArrayEquals(output, ArraysAndStrings.URLify(input, trueLength));
+    }
+
+    /**
      * 1.2
      */
     @Test

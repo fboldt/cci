@@ -1,4 +1,32 @@
 public class ArraysAndStrings {
+
+    /**
+     * 1.3 Replace all spaces in a string with '%20'.
+     * 
+     * @param str
+     * @return String with spaces replaced by "%20".
+     */
+    public static char[] URLify(char[] str, int trueLength) {
+        int spaces = 0;
+        for (int i = 0; i < trueLength; i++) {
+            if (str[i] == ' ') {
+                spaces++;
+            }
+        }
+        int index = trueLength + 2 * spaces;
+        for (int i = trueLength - 1; i >= 0; i--) {
+            if (str[i] == ' ') {
+                str[index - 1] = '0';
+                str[index - 2] = '2';
+                str[index - 3] = '%';
+                index -= 3;
+            } else {
+                str[--index] = str[i];
+            }
+        }
+        return str;
+    }
+
     /**
      * 1.2 Check if one string is a permutation of other. *
      * 
