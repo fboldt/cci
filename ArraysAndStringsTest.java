@@ -7,6 +7,16 @@ import org.junit.Test;
 public class ArraysAndStringsTest {
 
     /**
+     * 1.4
+     */
+    @Test
+    public void testPalindromePermutation() {
+        assertTrue(ArraysAndStrings.palindromePermutation("Tact Coa"));
+        assertTrue(ArraysAndStrings.palindromePermutation("Tact Coa papa"));
+        assertFalse(ArraysAndStrings.palindromePermutation("y Tact Coa oo x"));
+    }
+
+    /**
      * 1.3
      */
     @Test

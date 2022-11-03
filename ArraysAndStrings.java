@@ -1,6 +1,27 @@
 public class ArraysAndStrings {
 
     /**
+     * 1.4 Check if a string is a permutation of a palindrome.
+     * 
+     * @param str
+     * @return boolean
+     */
+    public static boolean palindromePermutation(String str) {
+        char[] array = str.toLowerCase().replaceAll("\\s", "").toCharArray();
+        int[] letters = new int[128];
+        int countOdd = 0;
+        for (int i = 0; i < array.length; i++) {
+            letters[array[i]]++;
+            if (letters[array[i]] % 2 == 1) {
+                countOdd++;
+            } else {
+                countOdd--;
+            }
+        }
+        return countOdd <= 1;
+    }
+
+    /**
      * 1.3 Replace all spaces in a string with '%20'.
      * 
      * @param str
